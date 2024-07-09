@@ -1,4 +1,3 @@
-// A mock function to mimic making an async request for data
 export async function fetchAllProducts() {
   return new Promise(async (resolve) =>{
     //TODO: We will not hardcode server URL here
@@ -9,12 +8,22 @@ export async function fetchAllProducts() {
   );
 }
 
-export async function fetchProductByFilters(filter) {
+export async function fetchProductsByFilters(filter,sort) {
+  // filter = {"category":["smartphone","laptops"]}
+  // sort = {_sort:"price",_order="desc"}
+
+  // TODO : on server we will support multi values in filter
   let queryString = '';
   for(let key in filter){
-    queryString += `${key}=${filter[key]}&`
+    const categoryValues = filter[key];
+    if(categoryValues.length){
+      const lastCategoryValue = categoryValues[categoryValues.length-1]
+      queryString += `${key}=${lastCategoryValue}&`
+    }
   }
-
+  for(let key in sort){
+    queryString += `${key}=${sort[key]}&`
+  }
 
   return new Promise(async (resolve) =>{
     //TODO: We will not hardcode server URL here
