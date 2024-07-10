@@ -881,5 +881,40 @@
       ],
       "thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/Vivo%20X21/thumbnail.png"
     }
+  ],
+  "brands" : [
+    {
+      "value": "Apple",
+      "label": "Apple",
+      "checked": false
+    },
+    {
+      "value": "Oppo",
+      "label": "Oppo",
+      "checked": false
+    },
+    {
+      "value": "Realme",
+      "label": "Realme",
+      "checked": false
+    },
+    {
+      "value": "Samsung",
+      "label": "Samsung",
+      "checked": false
+    },
+    {
+      "value": "Vivo",
+      "label": "Vivo",
+      "checked": false
+    }
+  ],
+  "categories": [
+    {
+      "value": "smartphones",
+      "label": "smartphones",
+      "checked": false
+    }
   ]
+
 }
